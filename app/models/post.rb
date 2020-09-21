@@ -4,7 +4,7 @@ class Post < ApplicationRecord
     validates :title, presence:true
     validates :content, length:{minimum:100}
     def give_like
-        self.likes+=1
+        self.likes += 1
     end
 
 end

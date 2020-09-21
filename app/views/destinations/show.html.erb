@@ -1,8 +1,10 @@
 <h1>Destinations#show</h1>
 <h2><%= @destination.name %>, <%= @destination.country%> </h2>
-<%= @destination.top_five.each do |top| %>
+<% @destination.posts.last(5).each do |top| %>
    <p> <%= link_to top.title, post_path(top) %></p>
 <% end %>
 
-<%# <p>average age of bloggers who post: <%= @destination.average_age %></p> %>
-
+<p>average age of bloggers who post: <%= @destination.average_age %></p>
+<br>
+<p>Most Liked Post: </p><br>
+"<%= @destination.featured_post.title %>", by <%= @destination.featured_post.blogger.name%>, with <%= @destination.featured_post.likes %> likes.
