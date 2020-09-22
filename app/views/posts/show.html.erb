@@ -3,5 +3,4 @@
 <p><%= @post.content %></p>
 <p><%= link_to @post.blogger.name, blogger_path(@post.blogger) %></p>
 <p><%= link_to @post.destination.name, destination_path(@post.destination) %></p>
-<%# <p><%= button_to "like", @post.give_like%> </p> %>
-
+<%= button_to "like", like_path(@post), method: :patch %>Current Likes: <%= @post.likes %>
